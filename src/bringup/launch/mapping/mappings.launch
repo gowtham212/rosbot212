@@ -1,0 +1,30 @@
+<launch>
+  <!-- Load the robot model into the parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot_model)/urdf/robot_root.xacro'"/>
+  <!-- RPLidar A1M8 -->
+   <include file="$(find bringup)/launch/rplidar.launch"/>
+
+  
+  <!-- Motor Controller -->
+  <node pkg="my_motor_controller" type="motor_driver_ros_interface.py" name="motor_controller_ros" output="screen"/>
+  
+  <!-- Differential Drive Controller  -->
+  <node pkg="differential_driver" type="twist_to_motors.py" name="twist_to_motors"/>
+  <node pkg="differential_driver" type="diff_tf.py" name="diff_tf" output="screen"/>
+   
+   
+   <!-- Joint State Publisher - Publishes Joint Positions -->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+   <!-- Robot State Publisher  - Uses URDF and Joint States to compute Transforms -->
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+ 
+ 
+  <!-- SLAM - Map Building -->
+  <node name="gmapping" pkg="gmapping" type="slam_gmapping">
+    <rosparam file="$(find bringup)/config/gmapping.yaml" command="load"/>
+  </node>
+
+
+
+</launch>

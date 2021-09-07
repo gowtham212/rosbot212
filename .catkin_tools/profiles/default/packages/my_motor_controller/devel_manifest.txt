@@ -1,0 +1,5 @@
+my_motor_controller
+/home/jetson/rosbot_ws/devel/.private/my_motor_controller/cmake.lock /home/jetson/rosbot_ws/devel/./cmake.lock
+/home/jetson/rosbot_ws/devel/.private/my_motor_controller/lib/pkgconfig/my_motor_controller.pc /home/jetson/rosbot_ws/devel/lib/pkgconfig/my_motor_controller.pc
+/home/jetson/rosbot_ws/devel/.private/my_motor_controller/share/my_motor_controller/cmake/my_motor_controllerConfig-version.cmake /home/jetson/rosbot_ws/devel/share/my_motor_controller/cmake/my_motor_controllerConfig-version.cmake
+/home/jetson/rosbot_ws/devel/.private/my_motor_controller/share/my_motor_controller/cmake/my_motor_controllerConfig.cmake /home/jetson/rosbot_ws/devel/share/my_motor_controller/cmake/my_motor_controllerConfig.cmake
