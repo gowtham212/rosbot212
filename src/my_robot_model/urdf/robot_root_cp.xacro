@@ -1,8 +1,5 @@
 <?xml version="1.0"?>	
-<robot name="robot" >
-
-
-  
+<robot name="robot">
 
   <!--BASE LINK-->
   <link name="base_footprint" />
@@ -34,14 +31,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <box size="0.28 0.23 0.05"/>
+      <box size="0.28 0.23 0.09"/>
     </geometry>
     <material name="Blue" />
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <box size="0.28 0.23 0.05"/>
+      <box size="0.28 0.23 0.09"/>
     </geometry>
   </collision>
   </link>
@@ -186,14 +183,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.035" />
+        <cylinder length="0.046" radius="0.035" />
       </geometry>
       <material name="Green" />
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.035" />
+        <cylinder length="0.046" radius="0.035" />
       </geometry>
     </collision>
   </link>
@@ -201,7 +198,7 @@
   <!--========================================== LASER JOINT ==========================================-->
   <joint name="laser_joint" type="fixed">
     <!--origin xyz="0.055 0 0.075" rpy="0 0 -1.5708" /-->
-    <origin xyz="0.090 0 0.095" rpy="0 0 3.14" />
+    <origin xyz="0.090 0 0.075" rpy="0 0 3.14" />
     <parent link="base_link" />
     <child link="laser_link" />
     <axis xyz="0 0 0" />
@@ -209,41 +206,6 @@
 
 
 
-<!--========================================== camera ==========================================-->
-<link name="camera">
-  <inertial>
-    <mass value="0.1"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <inertia
-          ixx="1e-6" ixy="0.0" ixz="0.0"
-          iyy="1e-6" iyz="0.0"
-          izz="1e-6"
-        />
-  </inertial>
-
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <box size="0.03 0.09 0.025"/>
-    </geometry>
-    <material name="Yellow" />
-  </visual>
-
-  <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <box size="0.03 0.09 0.025"/>
-    </geometry>
-  </collision>
-</link>
-
-<!--========================================== camera_joint ==========================================-->
-<joint name="camera_joint" type="fixed">
-  <origin xyz="0.090 0 0.045" rpy="0 0 0" />
-  <parent link="base_link"/>
-  <child link="camera" />
-  <axis xyz="0 1 0"/>
-</joint>
 
   <!--========================================== GAZEBO TAGS ==========================================-->
   <!-- BASE LINK -->
